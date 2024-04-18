@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="demo.cpp" />
     <ClCompile Include="server.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

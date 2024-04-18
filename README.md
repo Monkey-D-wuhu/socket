@@ -1,1 +1,1 @@
-# socket_c
+作者在计网实验的作业，使用winsock2包，采用多线程，server服务端，client客户端
