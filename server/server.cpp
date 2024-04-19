@@ -14,6 +14,12 @@ void HandleClient(SOCKET clientSocket) {
     const int BUFFER_SIZE = 1024;
     char buffer[BUFFER_SIZE];
 
+    std::string helloMessage = "hello";
+    if (send(clientSocket, helloMessage.c_str(), helloMessage.length(), 0) == SOCKET_ERROR) {
+        std::cerr << "Failed to send hello message." << std::endl;
+        closesocket(clientSocket);
+        return;
+    }
     // 进入循环，持续与客户端对话
     int recvResult;
     do {
@@ -111,7 +117,7 @@ int main() {
         clientThread.detach(); // 分离线程，使其运行在后台
     }
 
-    // 关闭监听套接字并清理 Winsock
+   
     closesocket(listenSocket);
     WSACleanup();
 
