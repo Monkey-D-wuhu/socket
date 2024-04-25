@@ -6,9 +6,6 @@
 #include <mutex>
 #pragma comment(lib,"ws2_32.lib")
 
-// 互斥锁，用于保护共享资源
-std::mutex g_mutex;
-
 // 处理客户端连接的线程函数
 void HandleClient(SOCKET clientSocket) {
     const int BUFFER_SIZE = 1024;
@@ -77,7 +74,7 @@ int main() {
 
     sockaddr_in serverAddr;
     serverAddr.sin_family = AF_INET;
-    serverAddr.sin_addr.s_addr = inet_addr("192.168.31.105");
+    serverAddr.sin_addr.s_addr = inet_addr("10.249.94.112");
     serverAddr.sin_port = htons(18888);
 
     if (bind(listenSocket, reinterpret_cast<sockaddr*>(&serverAddr), sizeof(serverAddr)) == SOCKET_ERROR) {
@@ -95,7 +92,7 @@ int main() {
         return 1;
     }
 
-    std::cout << "ip == 10.252.42.101 :18888 " << std::endl;
+    std::cout << "ip == 10.249.94.112 :18888 " << std::endl;
 
     // 接受客户端连接，并为每个连接创建一个线程处理
     while (true) {

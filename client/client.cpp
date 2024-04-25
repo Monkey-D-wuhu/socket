@@ -12,7 +12,7 @@ int main() {
     }
 
     // 服务器 IP 地址和端口号
-    std::string serverIP = "192.168.31.105";
+    std::string serverIP = "10.249.94.112";
     unsigned short serverPort = 18888;
 
     // 创建套接字
